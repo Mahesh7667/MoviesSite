@@ -1,15 +1,27 @@
 {% extends 'base.html' %}
+{% load static %}
 {% block body %}
 
 		<main class="content">
 			<section class="centered">
 				<h3>Movies List</h3>
 				<div class="movies">
+                <div class="mov">
+                                <a href="">
+                                    <img src="{% static "img/Avengers.jpg" %}">
+                                    <h2 class="movietitle">Avengers</h2>
+                                </a>
+                            </div><div class="mov">
+                                <a href="">
+                                    <img src="{% static "img/matrix.jpg" %}">
+                                    <h2 class="movietitle">Matrix</h2>
+                                </a>
+                            </div>
                         {% for movie in object_list %}
                             <div class="mov">
                                 <a href="">
                                     <img src="{{movie.image.url}}">
-                                    <h2 class="movietitle"{{ movie.title }}></h2>
+                                    <h2 class="movietitle">{{ movie.title }}</h2>
                                 </a>
                             </div>
                         {% endfor %}
